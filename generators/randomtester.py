@@ -14,6 +14,11 @@ import argparse
 from collections import namedtuple
 
 def parse_args():
+    """
+    Parse the command-line arguments
+    """
+
+    # region define a command-line argument parser
     parser = argparse.ArgumentParser()
     parser.add_argument('-d', '--depth', type=int, default=100,
                         help='Maximum search depth (100 default).')
@@ -73,7 +78,11 @@ def parse_args():
                         help="Run in verbose mode.")
     parser.add_argument('-H', '--html', type=str, default=None,
                         help="Write HTML report (directory to write to, None default).")
+    # endregion
+
+    # parse the command-line arguments
     parsed_args = parser.parse_args(sys.argv[1:])
+
     return (parsed_args, parser)
 
 def make_config(pargs, parser):
@@ -87,7 +96,7 @@ def make_config(pargs, parser):
     arg_list = [pdict[k] for k in key_list]
     Config = namedtuple('Config', key_list)
     nt_config = Config(*arg_list)
-    return nt_config   
+    return nt_config
 
 def handle_failure(test, msg, checkFail, newCov = False):
     global failCount, reduceTime, repeatCount, failures, quickCount, failCloud, cloudFailures, allClouds
@@ -236,10 +245,12 @@ def handle_failure(test, msg, checkFail, newCov = False):
 
 def main():
     global failCount,t,config,reduceTime,quickCount,repeatCount,failures,cloudFailures,R,opTime,checkTime,guardTime,restartTime,nops,ntests
-    
+
+    # region define the config object by parsing the command-line arguments
     parsed_args, parser = parse_args()
     config = make_config(parsed_args, parser)
     print('Random testing using config={}'.format(config))
+    # endregion
 
     R = random.Random(config.seed)
 
@@ -256,7 +267,9 @@ def main():
         failCloud = {}
         allClouds = {}
 
+    # create an instance of object SUT
     t = SUT.sut()
+
     if config.logging != None:
         t.setLog(config.logging)
 
