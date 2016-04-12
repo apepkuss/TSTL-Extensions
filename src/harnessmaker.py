@@ -329,6 +329,8 @@ def main():
     # sut.py (default)
     outf = open(config.output,'w')
 
+    # region CODE GENERATION PREPARATION
+
     # Handle raw python, imports
     outf.write("import copy\n")
     outf.write("import traceback\n")
@@ -622,13 +624,16 @@ def main():
             newLogs.append(refl)
     logSet = newLogs
 
-    # Now generate the action and guard code
+
+    # endregion
+
+    #region SUT CODE GENERATION
 
     outf.write("class " + config.classname + "(object):\n")
 
     genCode = []
 
-    # ------------------------------------------ #
+    #region Guards and Actions
     actDefs = []
     nind = 0
 
@@ -757,6 +762,9 @@ def main():
             afterSig = re.sub('([^\(]+)\(', "\\1_after(", expectCode, count=1)
             checkSig = re.sub('([^\(]+)\(', "\\1_check(__before_res, __after_res, ", expectCode, count=1)
 
+
+        # region Action Generation
+
         genCode.append("def " + act + "(self):\n")
         d = "self.__test.append(("
         d += "'''" + newC[:-1] +" ''',"
@@ -824,6 +832,10 @@ def main():
         if newC.find("guarded") == 0:
             guardCode += " and (" + newC.replace(")\n",",True))")
 
+        # endregion
+
+        # region Guard Generation
+
         genCode.append("def " + guard + "(self):\n")
         genCode.append(baseIndent + "return " + guardCode + "\n")
 
@@ -853,12 +865,13 @@ def main():
             if comparing:
                 d = "self.__refCode[" + "'''" + newC[:-1] + " '''].append(\"assert __result == __result_REF, \\\" (%s) == (%s) \\\" % (__result, __result_REF)\\n\")\n"
                 actDefs.append(d)
-            
-        
+
         if postCode:
             d = "self.__propCode[" + "'''" + newC[:-1] + " '''] = r\"" + postCode + "\"\n"
             actDefs.append(d)
-        
+
+        # endregion
+
         if preSet != []:
             d = "self.__preCode[" + "'''" + newC[:-1] + " '''] = []\n"
             actDefs.append(d)
@@ -866,8 +879,13 @@ def main():
                 d = "self.__preCode[" + "'''" + newC[:-1] + " '''].append(r\"" + p[:-1] + "\")\n"
                 actDefs.append(d)
 
-    # ------------------------------------------ #
+    #endregion
+
+    # region __init__ Function
+
+    #region OLD DEFINITIONS
     genCode.append("def __init__(self):\n")
+
     genCode.append(baseIndent + "try:\n")
     genCode.append(baseIndent + baseIndent + "test_before_all(self)\n")
     genCode.append(baseIndent + "except:\n")
@@ -921,6 +939,53 @@ def main():
         genCode.append(baseIndent + d + "\n")
     genCode.append(baseIndent + "self.__actions_backup = list(self.__actions)\n")
 
+    #endregion
+
+    #region NEW DEFINITIONS
+
+    genCode.append(baseIndent + "self.__catchUncaughtFailures = False\n")
+    genCode.append(baseIndent + "self.__ignoreprops = False\n")
+    genCode.append(baseIndent + "self.__timeout = 3600\n")
+
+    #endregion
+
+    # endregion
+
+    # region Properties Generation
+
+    # region setUncaughtFailures Property
+
+    genCode.append("def setUncaughtFailures(self, uncaught=False):\n")
+    genCode.append(baseIndent + "self.__catchUncaughtFailures = uncaught\n")
+
+    # endregion
+
+    # region setTimeout Property
+
+    genCode.append("def setCheckProperties(self, ignoreprops=False):\n")
+    genCode.append(baseIndent + "self.__ignoreprops = ignoreprops\n")
+
+    # endregion
+
+    # region setCheckProperties Property
+
+    genCode.append("def setTimeout(self, timeout=3600):\n")
+    genCode.append(baseIndent + "self.__timeout = timeout\n")
+
+    # endregion
+
+    # endregion
+
+    # region Function Generation
+
+    # region testWith Function
+
+    genCode.append("def testWith(self, tester):")
+    genCode.append(baseIndent + "Pass\n")
+
+    # endregion
+
+    # region restart Function
     genCode.append("def restart(self):\n")
     genCode.append(baseIndent + "try:\n")
     genCode.append(baseIndent + baseIndent + "test_before_restart(self)\n")
@@ -946,8 +1011,10 @@ def main():
     genCode.append(baseIndent + "try:\n")
     genCode.append(baseIndent + baseIndent + "test_after_restart(self)\n")
     genCode.append(baseIndent + "except:\n")
-    genCode.append(baseIndent + baseIndent + "pass\n")    
-    
+    genCode.append(baseIndent + baseIndent + "pass\n")
+    # endregion
+
+    #region log Function
     genCode.append("def log(self, name):\n")
     if logSet != []:
         genCode.append(baseIndent + "if self.__log == None:\n")
@@ -970,7 +1037,9 @@ def main():
             
     else:
         genCode.append(baseIndent + "pass\n")
+    #endregion
 
+    #region logPost Function
     genCode.append("def logPost(self, name):\n")
     if logSet != []:
         genCode.append(baseIndent + "if self.__log == None:\n")
@@ -1005,7 +1074,9 @@ def main():
         st += "copy.deepcopy(" + poolPrefix + p.replace("%","") + "_used),"
     st = st[:-1]
     genCode.append(st + "]\n")
+    #endregion
 
+    #region backtrack Function
     genCode.append("def backtrack(self,old):\n")
     genCode.append(baseIndent + "if self.__replayBacktrack:\n")
     genCode.append(baseIndent + baseIndent + "self.replay(self.replayable(old))\n")
@@ -1018,6 +1089,9 @@ def main():
         n += 1
     if len(poolSet) == 0:
         genCode.append(baseIndent + "pass\n")
+    #endregion
+
+    #region check Function
 
     genCode.append("def check(self):\n")
     if (propSet != []) or (len(poolType) > 0):
@@ -1060,17 +1134,23 @@ def main():
     for c in genCode:
         outf.write(baseIndent + c.replace("True and (","("))
 
-    ######################## REQUIRED FOR PACKAGING TSTL ##########################
+    #endregion
+
+    # region REQUIRED FOR PACKAGING TSTL
     boilerplate = pkg_resources.resource_stream('src', 'static/boilerplate.py')
     boilerplate_cov = pkg_resources.resource_stream('src', 'static/boilerplate_cov.py')
-    ###############################################################################
 
     for l in boilerplate:
         outf.write(baseIndent + l)
 
     if not config.nocover:
         for l in boilerplate_cov:
-            outf.write(baseIndent + l)    
+            outf.write(baseIndent + l)
+    # endregion
+
+    # endregion
+
+    #endregion
 
     outf.close()
 
