@@ -16,11 +16,9 @@ import traceback
 
 class simplerRandomTester(BaseTester):
     def __init__(self, sysargs):
-        # parse args
-        self.args = BaseTester.parse_args(sysargs)
-        # make config
-        self.config = BaseTester.make_config(self.args)
+        self.sysargs = sysargs
 
+        self.config = None
         self.sut = None
 
         self.failCloud = None
@@ -176,15 +174,25 @@ class simplerRandomTester(BaseTester):
                         self.allClouds[c] = True
                 print "FAILURE IS NEW, STORING; NOW", len(self.failures), "DISTINCT FAILURES"
 
-    def run(self, sut):
-        if sut is None:
-            print "Please specify a sut before running test."
-            return
+    def prepare(self, sut):
         self.sut = sut
 
+        # parse args
+        args = BaseTester.parse_args(self.sysargs)
+
+        # make config
+        self.config = BaseTester.make_config(args)
+
+        # update config with sut settings
         self.config.ignoreprops = self.sut.getCheckProperties()
         self.config.timeout = self.sut.getTimeout()
         self.config.uncaught = self.sut.getUncaughtFailures()
+
+
+    def run(self):
+        if self.sut is None:
+            print "Please specify a sut before running test."
+            return
 
         print('Random testing using config={}'.format(self.config))
 
@@ -420,7 +428,8 @@ def main():
     mysut.setTimeout(timeout=100)
 
     mytester = simplerRandomTester(sys.argv[1:])
-    mytester.run(mysut)
+    mytester.prepare(mysut)
+    mytester.run()
 
 if __name__ == '__main__':
     main()

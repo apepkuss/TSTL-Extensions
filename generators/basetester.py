@@ -12,6 +12,7 @@ import random
 import time
 import traceback
 import argparse
+from recordtype import recordtype
 from collections import namedtuple
 
 class BaseTester(object):
@@ -98,13 +99,22 @@ class BaseTester(object):
         entire configuration, if everything parses correctly.
         """
         pdict = pargs.__dict__
+
         # create a namedtuple object for fast attribute lookup
         key_list = pdict.keys()
         arg_list = [pdict[k] for k in key_list]
-        Config = namedtuple('Config', key_list)
+
+        # deprecated as namedtuple is immutable
+        # Config = namedtuple('Config', key_list)
+
+        Config = recordtype('Config', key_list)
         nt_config = Config(*arg_list)
         return nt_config
 
     @abstractmethod
-    def run(self, sut):
+    def prepare(self, sut):
+        pass
+
+    @abstractmethod
+    def run(self):
         pass

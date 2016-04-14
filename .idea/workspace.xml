@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e1890e9-e1fa-4a08-a4a6-4d2a5739b302" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generators/basetester.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generators/simplerandomtester.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generators/randombeam.py" afterPath="$PROJECT_DIR$/generators/randombeam.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generators/randomtester.py" afterPath="$PROJECT_DIR$/generators/randomtester.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generators/sut.py" afterPath="$PROJECT_DIR$/generators/sut.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/harnessmaker.py" afterPath="$PROJECT_DIR$/src/harnessmaker.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sut.py" afterPath="$PROJECT_DIR$/src/sut.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generators/basetester.py" afterPath="$PROJECT_DIR$/generators/basetester.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generators/simplerandomtester.py" afterPath="$PROJECT_DIR$/generators/simplerandomtester.py" />
     </list>
     <ignored path="TSTL-Extension.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -932,8 +926,8 @@
       <file leaf-file-name="randomtester.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generators/randomtester.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1154">
-              <caret line="382" column="37" selection-start-line="382" selection-start-column="26" selection-end-line="382" selection-end-column="37" />
+            <state relative-caret-position="1240">
+              <caret line="313" column="40" selection-start-line="313" selection-start-column="40" selection-end-line="313" selection-end-column="40" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#358#4697#0" expanded="false" />
@@ -941,6 +935,7 @@
                 <element signature="e#4735#5134#0" expanded="false" />
                 <element signature="e#5198#10944#0" expanded="false" />
                 <element signature="e#11568#11605#0" expanded="false" />
+                <element signature="e#12623#16300#0" expanded="false" />
                 <element signature="e#17578#18810#0" expanded="false" />
               </folding>
             </state>
@@ -950,11 +945,27 @@
       <file leaf-file-name="simplerandomtester.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generators/simplerandomtester.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="185" column="51" selection-start-line="185" selection-start-column="51" selection-end-line="185" selection-end-column="51" />
+            <state relative-caret-position="290">
+              <caret line="430" column="27" selection-start-line="430" selection-start-column="27" selection-end-line="430" selection-end-column="27" />
               <folding>
                 <element signature="e#1#10#0" expanded="true" />
-                <element signature="e#705#7632#0" expanded="false" />
+                <element signature="e#364#16754#0" expanded="false" />
+                <element signature="e#613#7540#0" expanded="false" />
+                <element signature="e#7990#16754#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basetester.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generators/basetester.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#520#5144#0" expanded="false" />
+                <element signature="e#5200#5740#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -963,8 +974,8 @@
       <file leaf-file-name="sut.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generators/sut.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="5397" column="32" selection-start-line="5397" selection-start-column="32" selection-end-line="5397" selection-end-column="32" />
+            <state relative-caret-position="186">
+              <caret line="5779" column="4" selection-start-line="5779" selection-start-column="4" selection-end-line="5779" selection-end-column="4" />
               <folding>
                 <element signature="e#191#445#0" expanded="false" />
                 <element signature="e#465#527#0" expanded="false" />
@@ -1791,20 +1802,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="basetester.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generators/basetester.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="108" column="21" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#486#5110#0" expanded="false" />
-                <element signature="e#5166#5605#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -1822,17 +1819,17 @@
       <list>
         <option value="$PROJECT_DIR$/generators/randomtester.py" />
         <option value="$PROJECT_DIR$/generators/randombeam.py" />
-        <option value="$PROJECT_DIR$/generators/basetester.py" />
         <option value="$PROJECT_DIR$/src/sut.py" />
         <option value="$PROJECT_DIR$/src/harnessmaker.py" />
         <option value="$PROJECT_DIR$/generators/sut.py" />
         <option value="$PROJECT_DIR$/generators/simplerandomtester.py" />
+        <option value="$PROJECT_DIR$/generators/basetester.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -2119,20 +2116,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16535018" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2494043" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23715416" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4561644" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32806325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2494043" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35968378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30136988" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2170,24 +2167,17 @@
           <line>6855</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/generators/simplerandomtester.py</url>
-          <line>421</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/generators/simplerandomtester.py</url>
-          <line>184</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="26" />
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="36" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="self.config" language="Python" />
-      </configuration>
-    </watches-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/harnessmaker.py">
@@ -2233,6 +2223,7 @@
             <element signature="e#4735#5134#0" expanded="false" />
             <element signature="e#5198#10944#0" expanded="false" />
             <element signature="e#11568#11605#0" expanded="false" />
+            <element signature="e#12623#16300#0" expanded="false" />
             <element signature="e#17578#18810#0" expanded="false" />
           </folding>
         </state>
@@ -2287,34 +2278,6 @@
             <element signature="e#2747#3146#0" expanded="false" />
             <element signature="e#3197#4140#0" expanded="false" />
             <element signature="e#4163#6987#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generators/basetester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="108" column="21" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#486#5110#0" expanded="false" />
-            <element signature="e#5166#5605#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generators/randomtester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1154">
-          <caret line="382" column="37" selection-start-line="382" selection-start-column="26" selection-end-line="382" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#358#4697#0" expanded="false" />
-            <element signature="e#451#497#0" expanded="false" />
-            <element signature="e#4735#5134#0" expanded="false" />
-            <element signature="e#5198#10944#0" expanded="false" />
-            <element signature="e#11568#11605#0" expanded="false" />
-            <element signature="e#17578#18810#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3214,10 +3177,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/generators/randomtester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1240">
+          <caret line="313" column="40" selection-start-line="313" selection-start-column="40" selection-end-line="313" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#358#4697#0" expanded="false" />
+            <element signature="e#451#497#0" expanded="false" />
+            <element signature="e#4735#5134#0" expanded="false" />
+            <element signature="e#5198#10944#0" expanded="false" />
+            <element signature="e#11568#11605#0" expanded="false" />
+            <element signature="e#12623#16300#0" expanded="false" />
+            <element signature="e#17578#18810#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generators/basetester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#520#5144#0" expanded="false" />
+            <element signature="e#5200#5740#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/generators/sut.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="5397" column="32" selection-start-line="5397" selection-start-column="32" selection-end-line="5397" selection-end-column="32" />
+        <state relative-caret-position="186">
+          <caret line="5779" column="4" selection-start-line="5779" selection-start-column="4" selection-end-line="5779" selection-end-column="4" />
           <folding>
             <element signature="e#191#445#0" expanded="false" />
             <element signature="e#465#527#0" expanded="false" />
@@ -4045,11 +4037,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generators/simplerandomtester.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="185" column="51" selection-start-line="185" selection-start-column="51" selection-end-line="185" selection-end-column="51" />
+        <state relative-caret-position="290">
+          <caret line="430" column="27" selection-start-line="430" selection-start-column="27" selection-end-line="430" selection-end-column="27" />
           <folding>
             <element signature="e#1#10#0" expanded="true" />
-            <element signature="e#705#7632#0" expanded="false" />
+            <element signature="e#364#16754#0" expanded="false" />
+            <element signature="e#613#7540#0" expanded="false" />
+            <element signature="e#7990#16754#0" expanded="false" />
           </folding>
         </state>
       </provider>
