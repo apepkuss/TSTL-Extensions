@@ -945,13 +945,22 @@
       <file leaf-file-name="simplerandomtester.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/generators/simplerandomtester.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="430" column="27" selection-start-line="430" selection-start-column="27" selection-end-line="430" selection-end-column="27" />
+            <state relative-caret-position="345">
+              <caret line="190" column="23" selection-start-line="190" selection-start-column="23" selection-end-line="190" selection-end-column="23" />
               <folding>
                 <element signature="e#1#10#0" expanded="true" />
-                <element signature="e#364#16754#0" expanded="false" />
+                <element signature="e#401#536#0" expanded="false" />
                 <element signature="e#613#7540#0" expanded="false" />
-                <element signature="e#7990#16754#0" expanded="false" />
+                <element signature="e#7573#8000#0" expanded="false" />
+                <element signature="e#8034#16808#0" expanded="false" />
+                <element signature="e#8511#8562#0" expanded="false" />
+                <element signature="e#9031#9092#0" expanded="false" />
+                <element signature="e#9185#14321#0" expanded="false" />
+                <element signature="e#14431#14693#0" expanded="false" />
+                <element signature="e#15013#15133#0" expanded="false" />
+                <element signature="e#15289#16635#0" expanded="false" />
+                <element signature="e#15903#16635#0" expanded="false" />
+                <element signature="e#16685#16808#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -960,8 +969,8 @@
       <file leaf-file-name="basetester.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generators/basetester.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
+            <state relative-caret-position="405">
+              <caret line="114" column="20" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="20" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#520#5144#0" expanded="false" />
@@ -1822,8 +1831,8 @@
         <option value="$PROJECT_DIR$/src/sut.py" />
         <option value="$PROJECT_DIR$/src/harnessmaker.py" />
         <option value="$PROJECT_DIR$/generators/sut.py" />
-        <option value="$PROJECT_DIR$/generators/simplerandomtester.py" />
         <option value="$PROJECT_DIR$/generators/basetester.py" />
+        <option value="$PROJECT_DIR$/generators/simplerandomtester.py" />
       </list>
     </option>
   </component>
@@ -2129,7 +2138,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2494043" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30136988" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30136988" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3194,18 +3203,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generators/basetester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#520#5144#0" expanded="false" />
-            <element signature="e#5200#5740#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generators/sut.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -4035,15 +4032,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/generators/basetester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="114" column="20" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#520#5144#0" expanded="false" />
+            <element signature="e#5200#5740#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/generators/simplerandomtester.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="430" column="27" selection-start-line="430" selection-start-column="27" selection-end-line="430" selection-end-column="27" />
+        <state relative-caret-position="345">
+          <caret line="190" column="23" selection-start-line="190" selection-start-column="23" selection-end-line="190" selection-end-column="23" />
           <folding>
             <element signature="e#1#10#0" expanded="true" />
-            <element signature="e#364#16754#0" expanded="false" />
+            <element signature="e#401#536#0" expanded="false" />
             <element signature="e#613#7540#0" expanded="false" />
-            <element signature="e#7990#16754#0" expanded="false" />
+            <element signature="e#7573#8000#0" expanded="false" />
+            <element signature="e#8034#16808#0" expanded="false" />
+            <element signature="e#8511#8562#0" expanded="false" />
+            <element signature="e#9031#9092#0" expanded="false" />
+            <element signature="e#9185#14321#0" expanded="false" />
+            <element signature="e#14431#14693#0" expanded="false" />
+            <element signature="e#15013#15133#0" expanded="false" />
+            <element signature="e#15289#16635#0" expanded="false" />
+            <element signature="e#15903#16635#0" expanded="false" />
+            <element signature="e#16685#16808#0" expanded="false" />
           </folding>
         </state>
       </provider>

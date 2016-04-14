@@ -112,9 +112,9 @@ class BaseTester(object):
         return nt_config
 
     @abstractmethod
-    def prepare(self, sut):
+    def prepare(self):
         pass
 
     @abstractmethod
-    def run(self):
+    def run(self, sut):
         pass

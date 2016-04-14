@@ -174,9 +174,7 @@ class simplerRandomTester(BaseTester):
                         self.allClouds[c] = True
                 print "FAILURE IS NEW, STORING; NOW", len(self.failures), "DISTINCT FAILURES"
 
-    def prepare(self, sut):
-        self.sut = sut
-
+    def prepare(self):
         # parse args
         args = BaseTester.parse_args(self.sysargs)
 
@@ -188,13 +186,16 @@ class simplerRandomTester(BaseTester):
         self.config.timeout = self.sut.getTimeout()
         self.config.uncaught = self.sut.getUncaughtFailures()
 
+        print('Random testing using config={}'.format(self.config))
 
-    def run(self):
-        if self.sut is None:
+    def run(self, sut):
+        if sut is None:
             print "Please specify a sut before running test."
             return
+        self.sut = sut
 
-        print('Random testing using config={}'.format(self.config))
+        # parse args and make config
+        self.prepare()
 
         # test sut
         R = random.Random(self.config.seed)
@@ -421,6 +422,7 @@ class simplerRandomTester(BaseTester):
             print len(self.sut.allBranches()), "BRANCHES COVERED"
             print len(self.sut.allStatements()), "STATEMENTS COVERED"
 
+
 def main():
     mysut = SUT.sut()
     mysut.setUncaughtFailures(uncaught=True)
@@ -428,8 +430,7 @@ def main():
     mysut.setTimeout(timeout=100)
 
     mytester = simplerRandomTester(sys.argv[1:])
-    mytester.prepare(mysut)
-    mytester.run()
+    mytester.run(mysut)
 
 if __name__ == '__main__':
     main()
