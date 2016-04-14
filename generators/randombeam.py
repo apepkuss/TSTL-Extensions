@@ -2,6 +2,7 @@ import os
 import sys
 
 # Appending current working directory to sys.path
+
 current_working_dir = os.getcwd()
 sys.path.append(current_working_dir)
 

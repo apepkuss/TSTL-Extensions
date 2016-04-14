@@ -329,7 +329,7 @@ def main():
     # sut.py (default)
     outf = open(config.output,'w')
 
-    # region CODE GENERATION PREPARATION
+# region CODE GENERATION PREPARATION
 
     # Handle raw python, imports
     outf.write("import copy\n")
@@ -627,13 +627,13 @@ def main():
 
     # endregion
 
-    #region SUT CODE GENERATION
+    # region SUT CODE GENERATION
 
     outf.write("class " + config.classname + "(object):\n")
 
     genCode = []
 
-    #region Guards and Actions
+    # region Guards and Actions
     actDefs = []
     nind = 0
 
@@ -879,11 +879,10 @@ def main():
                 d = "self.__preCode[" + "'''" + newC[:-1] + " '''].append(r\"" + p[:-1] + "\")\n"
                 actDefs.append(d)
 
-    #endregion
+    # endregion
 
     # region __init__ Function
 
-    #region OLD DEFINITIONS
     genCode.append("def __init__(self):\n")
 
     genCode.append(baseIndent + "try:\n")
@@ -939,40 +938,35 @@ def main():
         genCode.append(baseIndent + d + "\n")
     genCode.append(baseIndent + "self.__actions_backup = list(self.__actions)\n")
 
-    #endregion
 
-    #region NEW DEFINITIONS
 
     genCode.append(baseIndent + "self.__catchUncaughtFailures = False\n")
     genCode.append(baseIndent + "self.__ignoreprops = False\n")
     genCode.append(baseIndent + "self.__timeout = 3600\n")
 
-    #endregion
+    genCode.append("def getUncaughtFailures(self):\n")
+    genCode.append(baseIndent + "return self.__catchUncaughtFailures\n")
+    genCode.append("\n")
 
-    # endregion
+    genCode.append("def getCheckProperties(self):\n")
+    genCode.append(baseIndent + "return self.__ignoreprops\n")
+    genCode.append("\n")
 
-    # region Properties Generation
-
-    # region setUncaughtFailures Property
+    genCode.append("def getTimeout(self):\n")
+    genCode.append(baseIndent + "return self.__timeout\n")
+    genCode.append("\n")
 
     genCode.append("def setUncaughtFailures(self, uncaught=False):\n")
     genCode.append(baseIndent + "self.__catchUncaughtFailures = uncaught\n")
-
-    # endregion
-
-    # region setTimeout Property
+    genCode.append("\n")
 
     genCode.append("def setCheckProperties(self, ignoreprops=False):\n")
     genCode.append(baseIndent + "self.__ignoreprops = ignoreprops\n")
-
-    # endregion
-
-    # region setCheckProperties Property
+    genCode.append("\n")
 
     genCode.append("def setTimeout(self, timeout=3600):\n")
     genCode.append(baseIndent + "self.__timeout = timeout\n")
-
-    # endregion
+    genCode.append("\n")
 
     # endregion
 
@@ -980,10 +974,15 @@ def main():
 
     # region testWith Function
 
-    genCode.append("def testWith(self, tester):")
-    genCode.append(baseIndent + "Pass\n")
-
+    genCode.append("def testWith(self, tester):\n")
+    genCode.append(baseIndent + "pass\n")
+    genCode.append("\n")
     # endregion
+
+
+
+
+
 
     # region restart Function
     genCode.append("def restart(self):\n")

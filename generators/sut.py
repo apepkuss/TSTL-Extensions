@@ -5379,6 +5379,15 @@ class sut(object):
 
     #region NEW PROPERTIES
 
+    def getUncaughtFailures(self):
+        return self.__catchUncaughtFailures
+
+    def getCheckProperties(self):
+        return self.__ignoreprops
+
+    def getTimeout(self):
+        return self.__timeout
+
     def setUncaughtFailures(self, uncaught=False):
         self.__catchUncaughtFailures = uncaught
 

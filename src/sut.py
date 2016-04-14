@@ -5547,13 +5547,27 @@ class sut(object):
         self.__catchUncaughtFailures = False
         self.__ignoreprops = False
         self.__timeout = 3600
+    def getUncaughtFailures(self):
+        return self.__catchUncaughtFailures
+    
+    def getCheckProperties(self):
+        return self.__ignoreprops
+    
+    def getTimeout(self):
+        return self.__timeout
+    
     def setUncaughtFailures(self, uncaught=False):
         self.__catchUncaughtFailures = uncaught
+    
     def setCheckProperties(self, ignoreprops=False):
         self.__ignoreprops = ignoreprops
+    
     def setTimeout(self, timeout=3600):
         self.__timeout = timeout
-    def testWith(self, tester):        Pass
+    
+    def testWith(self, tester):
+        pass
+    
     def restart(self):
         try:
             test_before_restart(self)

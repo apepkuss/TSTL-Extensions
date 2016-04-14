@@ -17,9 +17,9 @@ def parse_args():
     """
     Parse the command-line arguments
     """
+    parser = argparse.ArgumentParser()
 
     # region define a command-line argument parser
-    parser = argparse.ArgumentParser()
     parser.add_argument('-d', '--depth', type=int, default=100,
                         help='Maximum search depth (100 default).')
     parser.add_argument('-t', '--timeout', type=int, default=3600,
@@ -80,7 +80,7 @@ def parse_args():
                         help="Write HTML report (directory to write to, None default).")
     # endregion
 
-    # parse the command-line arguments
+
     parsed_args = parser.parse_args(sys.argv[1:])
 
     return (parsed_args, parser)
