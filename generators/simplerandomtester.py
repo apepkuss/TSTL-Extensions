@@ -181,10 +181,13 @@ class simplerRandomTester(BaseTester):
         # make config
         self.config = BaseTester.make_config(args)
 
+        #
+        # Uncomment following code snippet for API-based invocation.
+        #
         # update config with sut settings
-        self.config.ignoreprops = self.sut.getCheckProperties()
-        self.config.timeout = self.sut.getTimeout()
-        self.config.uncaught = self.sut.getUncaughtFailures()
+        # self.config.ignoreprops = self.sut.getCheckProperties()
+        # self.config.timeout = self.sut.getTimeout()
+        # self.config.uncaught = self.sut.getUncaughtFailures()
 
         print('Random testing using config={}'.format(self.config))
 
@@ -427,10 +430,23 @@ def main():
     mytester = simplerRandomTester(sys.argv[1:])
 
     mysut = SUT.sut()
-    mysut.setUncaughtFailures(uncaught=True)
-    mysut.setCheckProperties(ignoreprops=True)
-    mysut.setTimeout(timeout=100)
     mysut.testWith(mytester)
+
+    #
+    # API-based demonstration
+    #
+    # The following code snippet demonstrates API-based invocation.
+    # Before debug/run the code, (1) remove compiler options; (2)
+    # uncomment the code snippet in prepare() function of simplerRandomTester class
+    #
+    # mytester = simplerRandomTester(sys.argv[1:])
+    #
+    # mysut = SUT.sut()
+    # mysut.testWith(mytester)
+    # mysut.setUncaughtFailures(uncaught=True)
+    # mysut.setCheckProperties(ignoreprops=True)
+    # mysut.setTimeout(timeout=100)
+    #
 
 
 if __name__ == '__main__':

@@ -329,8 +329,6 @@ def main():
     # sut.py (default)
     outf = open(config.output,'w')
 
-# region CODE GENERATION PREPARATION
-
     # Handle raw python, imports
     outf.write("import copy\n")
     outf.write("import traceback\n")
@@ -624,8 +622,6 @@ def main():
             newLogs.append(refl)
     logSet = newLogs
 
-
-    # endregion
 
     # region SUT CODE GENERATION
 
