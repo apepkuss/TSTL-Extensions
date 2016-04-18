@@ -5566,7 +5566,7 @@ class sut(object):
         self.__timeout = timeout
     
     def testWith(self, tester):
-        pass
+        tester.run(self)
     
     def restart(self):
         try:
