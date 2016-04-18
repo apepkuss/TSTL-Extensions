@@ -5401,7 +5401,8 @@ class sut(object):
 
     #region NEW FUNCTIONS
     def testWith(self, tester):
-        pass
+        tester.run(self)
+
     #endregion
 
 

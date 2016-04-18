@@ -424,13 +424,14 @@ class simplerRandomTester(BaseTester):
 
 
 def main():
+    mytester = simplerRandomTester(sys.argv[1:])
+
     mysut = SUT.sut()
     mysut.setUncaughtFailures(uncaught=True)
     mysut.setCheckProperties(ignoreprops=True)
     mysut.setTimeout(timeout=100)
+    mysut.testWith(mytester)
 
-    mytester = simplerRandomTester(sys.argv[1:])
-    mytester.run(mysut)
 
 if __name__ == '__main__':
     main()

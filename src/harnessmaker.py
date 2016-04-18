@@ -975,7 +975,7 @@ def main():
     # region testWith Function
 
     genCode.append("def testWith(self, tester):\n")
-    genCode.append(baseIndent + "pass\n")
+    genCode.append(baseIndent + "tester.run(self)\n")
     genCode.append("\n")
     # endregion
 
